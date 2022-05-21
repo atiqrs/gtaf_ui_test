@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../features/commit_list/presentation/pages/commit_page.dart';
+import '../features/user_profile/presentation/pages/user_profile_page.dart';
 
 import '../core/util/colors.dart';
 import '../core/util/constants.dart';
@@ -28,8 +30,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: IndexedStack(
         index: _currentIndex,
         children: const [
-          // CommitPage(),
-          // UserProfilePage(),
+          CommitPage(),
+          UserProfilePage(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
