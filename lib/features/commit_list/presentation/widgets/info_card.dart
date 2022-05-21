@@ -20,7 +20,6 @@ class InfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     double height = size.height;
-    debugPrint('height: ${height * 0.015}');
     return Container(
       // ConstrainedBox(
       // constraints: BoxConstraints(
