@@ -25,15 +25,21 @@ class CustomeBottomNavButton extends StatefulWidget {
 class _CustomeBottomNavButtonState extends State<CustomeBottomNavButton> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    double height = size.height;
     return Expanded(
       child: InkWell(
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: widget.onTap,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(
                 widget.iconInfo,
+                height: (height * .08) * .4,
+                width: (height * .08) * .4,
                 color: widget.currentIndex == widget.ownIndex
                     ? iconSelectedColor
                     : iconUnselectedColor,
