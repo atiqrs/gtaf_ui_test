@@ -30,7 +30,7 @@ class _CommitPageState extends State<CommitPage> {
                 Container(
                   height: height * 0.055,
                   width: double.infinity,
-                  color: mainColor,
+                  color: cardBackgroundColor,
                   alignment: Alignment.centerLeft,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
