@@ -27,12 +27,14 @@ class _MyHomePageState extends State<MyHomePage> {
     double height = size.height;
     double width = size.width;
     return Scaffold(
-      body: IndexedStack(
-        index: _currentIndex,
-        children: const [
-          CommitPage(),
-          UserProfilePage(),
-        ],
+      body: SafeArea(
+        child: IndexedStack(
+          index: _currentIndex,
+          children: const [
+            CommitPage(),
+            UserProfilePage(),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         color: navBackgroundColor,

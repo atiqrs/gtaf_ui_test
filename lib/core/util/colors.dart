@@ -9,3 +9,6 @@ const cardDeviderColor = Color(0xff404040);
 
 const iconSelectedColor = Color.fromRGBO(10, 132, 255, 1);
 const iconUnselectedColor = Color.fromRGBO(10, 132, 255, 1);
+
+const primaryTextColor = Color(0xffffffff);
+const secondaryTextColor = Color(0xffB8B8B8);
