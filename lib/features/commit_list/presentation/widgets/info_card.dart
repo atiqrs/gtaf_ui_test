@@ -8,13 +8,7 @@ class InfoCard extends StatelessWidget {
   final String imageUrl;
   final String userName;
 
-  const InfoCard(
-      {Key? key,
-      required this.commitMessage,
-      required this.commitTime,
-      required this.imageUrl,
-      required this.userName})
-      : super(key: key);
+  const InfoCard({Key? key, required this.commitMessage, required this.commitTime, required this.imageUrl, required this.userName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -71,9 +65,7 @@ class InfoCard extends StatelessWidget {
                           fit: BoxFit.fill,
                           height: 20,
                           width: 20,
-                          progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  const CircularProgressIndicator(),
+                          progressIndicatorBuilder: (context, url, downloadProgress) => const CircularProgressIndicator(),
                           errorWidget: (context, url, error) => const Icon(
                             Icons.error,
                             color: cardDeviderColor,
