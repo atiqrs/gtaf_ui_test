@@ -95,69 +95,63 @@ class CommitListPageView extends StatelessWidget {
 
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              // height: height * 0.055,
-              // width: double.infinity,
-              color: cardBackgroundColor,
-              alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-              child: Row(
-                children: [
-                  Text(
-                    commitPageTitle,
-                    style: TextStyle(
-                      color: primaryTextColor,
-                      fontSize: height * 0.021,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  const SizedBox(width: 20),
-                  Container(
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: secondaryColor,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 1,
-                    ),
-                    // height: height * 0.03,
-                    // width: width * 0.2,
-                    child: Text(
-                      commitBranchTitle,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                // height: height * 0.055,
+                // width: double.infinity,
+                color: cardBackgroundColor,
+                alignment: Alignment.centerLeft,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                child: Row(
+                  children: [
+                    Text(
+                      commitPageTitle,
                       style: TextStyle(
                         color: primaryTextColor,
                         fontSize: height * 0.021,
                         fontWeight: FontWeight.w400,
                       ),
-                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
-              ),
-            ),
-            SingleChildScrollView(
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    width: width * .02,
-                  ),
-                  if (commitListResponse != null)
-                    for (var item in commitListResponse!)
-                      InfoCard(
-                        commitMessage: item.commit.message,
-                        commitTime: getTime(item.commit.committer.date),
-                        imageUrl: item.author.avatarUrl,
-                        userName: item.commit.author.name,
+                    const SizedBox(width: 20),
+                    Container(
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: secondaryColor,
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                ],
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 1,
+                      ),
+                      // height: height * 0.03,
+                      // width: width * 0.2,
+                      child: Text(
+                        commitBranchTitle,
+                        style: TextStyle(
+                          color: primaryTextColor,
+                          fontSize: height * 0.021,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              if (commitListResponse != null)
+                for (var item in commitListResponse!)
+                  InfoCard(
+                    commitMessage: item.commit.message,
+                    commitTime: getTime(item.commit.committer.date),
+                    imageUrl: item.author.avatarUrl,
+                    userName: item.commit.author.name,
+                  ),
+            ],
+          ),
         ),
       ),
     );

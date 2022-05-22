@@ -26,7 +26,7 @@ class InfoCard extends StatelessWidget {
       //   minHeight: height * 0.09,
       //   maxHeight: height * 0.12,
       // ),
-      height: height * 0.09,
+      height: height * 0.12,
       width: double.infinity,
       color: cardBackgroundColor,
       child: Column(
@@ -41,13 +41,15 @@ class InfoCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        commitMessage,
-                        maxLines: 2,
-                        style: TextStyle(
-                          color: primaryTextColor,
-                          fontSize: height * 0.021,
-                          fontWeight: FontWeight.w400,
+                      Flexible(
+                        child: Text(
+                          commitMessage,
+                          maxLines: 2,
+                          style: TextStyle(
+                            color: primaryTextColor,
+                            fontSize: height * 0.021,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                       const SizedBox(width: 12),
