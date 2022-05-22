@@ -152,7 +152,7 @@ class CommitListPageView extends StatelessWidget {
                         commitMessage: item.commit.message,
                         commitTime: getTime(item.commit.committer.date),
                         imageUrl: item.author.avatarUrl,
-                        userName: item.commit.committer.name,
+                        userName: item.commit.author.name,
                       ),
                 ],
               ),
