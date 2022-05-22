@@ -59,7 +59,7 @@ class _CommitPageState extends State<CommitPage> {
                     return Container();
                   }
                 case Status.ERROR:
-                  return CommitBasicPage();
+                  return const CommitBasicPage();
               }
             }
             return Container();

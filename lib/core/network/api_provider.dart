@@ -26,7 +26,6 @@ class ApiProvider {
     switch (response.statusCode) {
       case 200:
         var responseJson = json.decode(response.body.toString());
-        // print(responseJson);
         return responseJson;
       case 400:
         throw BadRequestException(response.body.toString());
@@ -35,7 +34,8 @@ class ApiProvider {
         throw UnauthorisedException(response.body.toString());
       case 500:
       default:
-        throw FetchDataException('Error occured while Communication with Server with StatusCode : ${response.reasonPhrase}');
+        throw FetchDataException(
+            'Error occured while Communication with Server with StatusCode : ${response.reasonPhrase}');
     }
   }
 }

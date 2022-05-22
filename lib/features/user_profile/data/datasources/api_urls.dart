@@ -1,3 +1,3 @@
 import '../../../../core/network/api.dart';
 
-const userProfileApiUrl = '$rootApiUrl/users/flutters';
+const userProfileApiUrl = '$rootApiUrl/users/flutter';

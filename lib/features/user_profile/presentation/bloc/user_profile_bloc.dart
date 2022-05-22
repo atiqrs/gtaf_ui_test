@@ -1,8 +1,9 @@
 import 'dart:async';
 
+import 'package:gtaf_ui_test/features/user_profile/data/models/user_profile_response.dart';
+import 'package:gtaf_ui_test/features/user_profile/data/repositories/user_profile_repository.dart';
+
 import '/core/network/response.dart';
-import '../../data/models/user_profile_response.dart';
-import '../../data/repositories/user_profile_repository.dart';
 
 class UserProfileBloc {
   final UserProfileRepository _userProfileRepository = UserProfileRepository();
@@ -14,11 +15,11 @@ class UserProfileBloc {
   Stream<Response<UserProfileResponse>> get chunkListStream =>
       _streamController.stream;
 
-  UserProfileBloc(int numberOfCommits) {
-    fetchUserProfile(numberOfCommits);
+  UserProfileBloc() {
+    fetchUserProfile();
   }
 
-  fetchUserProfile(int numberOfCommits) async {
+  fetchUserProfile() async {
     chunkListSink.add(Response.loading('Fetching User Data...'));
     try {
       UserProfileResponse userProfileResponse =
