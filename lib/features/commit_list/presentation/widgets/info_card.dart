@@ -8,7 +8,13 @@ class InfoCard extends StatelessWidget {
   final String imageUrl;
   final String userName;
 
-  const InfoCard({Key? key, required this.commitMessage, required this.commitTime, required this.imageUrl, required this.userName}) : super(key: key);
+  const InfoCard(
+      {Key? key,
+      required this.commitMessage,
+      required this.commitTime,
+      required this.imageUrl,
+      required this.userName})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,20 +64,29 @@ class InfoCard extends StatelessWidget {
                   SizedBox(height: height * 0.01),
                   Row(
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: CachedNetworkImage(
-                          imageUrl: imageUrl,
-                          fit: BoxFit.fill,
-                          height: 20,
-                          width: 20,
-                          progressIndicatorBuilder: (context, url, downloadProgress) => const CircularProgressIndicator(),
-                          errorWidget: (context, url, error) => const Icon(
-                            Icons.error,
-                            color: cardDeviderColor,
-                          ),
-                        ),
-                      ),
+                      (imageUrl.isNotEmpty)
+                          ? ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: CachedNetworkImage(
+                                imageUrl: imageUrl,
+                                fit: BoxFit.fill,
+                                height: 20,
+                                width: 20,
+                                progressIndicatorBuilder:
+                                    (context, url, downloadProgress) =>
+                                        const CircularProgressIndicator(),
+                                errorWidget: (context, url, error) =>
+                                    const Icon(
+                                  Icons.error,
+                                  color: cardDeviderColor,
+                                ),
+                              ),
+                            )
+                          : const Icon(
+                              Icons.error,
+                              color: cardDeviderColor,
+                              size: 20,
+                            ),
                       // CachedNetworkImage(
                       //   imageUrl:
                       //       'https://www.android-examples.com/wp-content/uploads/2016/03/demo_image.jpg',
